@@ -78,3 +78,9 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
+---
+
+## Contact
+
+Questions, feedback, or ideas?  
+Reach out at **contact@ervra.tech**.
