@@ -1,0 +1,33 @@
+name: "Drift Radar"
+description: "Structural PR risk signal (not a linter). Detects risk drift vs repo baseline and posts a single PR comment."
+author: "ErvraTech"
+
+inputs:
+  github-token:
+    description: "GitHub token"
+    required: true
+    default: ${{ github.token }}
+  mode:
+    description: "Run mode: analyze | refresh-baseline"
+    required: false
+    default: "analyze"
+  history-prs:
+    description: "Number of merged PRs to use for baseline"
+    required: false
+    default: "20"
+  comment-tag:
+    description: "Hidden marker used to find/update the same comment"
+    required: false
+    default: "<!-- drift-radar -->"
+  pull-number:
+    description: "PR number for workflow_dispatch runs (optional if context provides PR)"
+    required: false
+    default: ""
+
+runs:
+  using: "node20"
+  main: "dist/index.js"
+
+branding:
+  icon: "activity"
+  color: "purple"

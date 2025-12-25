@@ -1,0 +1,24 @@
+{
+  "name": "drift-radar",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Drift Radar GitHub Action",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "bundle": "ncc build dist/main.js -o dist -m",
+    "package": "npm run build && npm run bundle",
+    "lint": "node -e \"console.log('No linter by design (product constraint).')\""
+  },
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "@actions/github": "^6.0.0",
+    "@actions/cache": "^4.0.2",
+    "octokit": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "@vercel/ncc": "^0.38.1",
+    "typescript": "^5.6.3"
+  }
+}
