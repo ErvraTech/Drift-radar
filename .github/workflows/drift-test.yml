@@ -1,0 +1,17 @@
+name: Drift Radar Test
+
+on:
+  pull_request:
+
+jobs:
+  drift:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      issues: write
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: e-rvra/drift-radar@v1
