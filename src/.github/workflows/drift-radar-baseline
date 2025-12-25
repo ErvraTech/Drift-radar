@@ -1,0 +1,23 @@
+name: Drift Radar — Baseline Refresh
+
+on:
+  schedule:
+    - cron: "0 6 * * 1" # Monday 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: read
+  issues: write
+  actions: read
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Drift Radar (refresh-baseline)
+        uses: e-rvra/drift-radar@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          mode: refresh-baseline
+          history-prs: "20"
