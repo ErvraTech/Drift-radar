@@ -1,0 +1,39 @@
+name: Drift Radar
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+  pull_request_target:
+    types: [opened, synchronize, reopened, ready_for_review]
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "analyze or refresh-baseline"
+        required: true
+        default: "analyze"
+      pull-number:
+        description: "PR number (required for analyze if not in PR context)"
+        required: false
+        default: ""
+      history-prs:
+        description: "Merged PRs used for baseline"
+        required: false
+        default: "20"
+
+permissions:
+  contents: read
+  pull-requests: read
+  issues: write
+  actions: read
+
+jobs:
+  drift-radar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Drift Radar
+        uses: ./
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          mode: ${{ inputs.mode || 'analyze' }}
+          pull-number: ${{ inputs.pull-number || '' }}
+          history-prs: ${{ inputs.history-prs || '20' }}
