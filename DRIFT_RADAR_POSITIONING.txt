@@ -1,0 +1,205 @@
+============================================================
+DRIFT RADAR — CONCEPTUAL & TECHNICAL POSITIONING
+============================================================
+
+Purpose
+-------
+Drift Radar is a lightweight analysis instrument designed to surface
+signals of *structural drift* in evolving codebases.
+
+Its purpose is not to evaluate code quality, correctness, or style.
+It exists to help humans perceive how the *structure* of a system
+changes over time.
+
+Drift Radar answers a single question:
+
+"Is this repository evolving smoothly, or is it drifting
+in a non-trivial and potentially invisible way?"
+
+------------------------------------------------------------
+
+What Drift Radar Detects
+-----------------------
+Drift Radar focuses on *structural amplification*, not raw change.
+
+It observes how modifications interact with the existing structure
+of a repository, rather than how large those modifications appear
+in isolation.
+
+Typical observable signals include:
+- concentration or dispersion of changes over time
+- repeated interaction with structurally central areas
+- gradual growth of coupling surfaces
+- imbalance between change size and structural impact
+- deviation from historical evolution patterns
+
+These signals are intentionally synthetic and non-decomposable.
+They are not meant to be reverse-engineered into individual metrics
+or atomic scores.
+
+Drift Radar captures *emergent behavior*, not isolated properties.
+
+------------------------------------------------------------
+
+What Drift Radar Explicitly Does NOT Do
+--------------------------------------
+Drift Radar does NOT attempt to:
+- find bugs
+- assess correctness
+- judge code quality
+- enforce best practices
+- block merges
+- replace human review
+- produce pass/fail decisions
+
+It is not a linter.
+It is not a static analyzer.
+It is not a CI gate.
+It is not an automated reviewer.
+It is not a decision engine.
+
+Drift Radar produces *signals*, not verdicts.
+
+------------------------------------------------------------
+
+How Drift Radar Is Used
+----------------------
+Drift Radar is typically executed on Pull Requests.
+
+A standard workflow is:
+1. A Pull Request is opened
+2. Drift Radar analyzes the change in the context of repository history
+3. A single, stable comment is posted on the PR
+
+The comment contains:
+- a synthetic drift signal
+- qualitative indicators for interpretation
+- contextual framing
+- no blocking instruction
+- no enforcement mechanism
+
+Developers and reviewers remain fully in control.
+
+------------------------------------------------------------
+
+Interpreting the Output
+----------------------
+Drift Radar output should be read as a *warning light*, not as a rule.
+
+Examples of valid interpretations include:
+- "This change is small but interacts with structurally central areas"
+- "This PR amplifies an existing long-term drift pattern"
+- "This change alters assumptions that historically remained stable"
+
+A high drift signal does NOT mean:
+- the change is incorrect
+- the PR must be rejected
+- the architecture is necessarily wrong
+
+It means:
+- the change deserves attention
+- the change may warrant discussion
+- the long-term impact may not be obvious at first glance
+
+The drift signal should be understood as an *emergent indicator*,
+not as the sum of individual factors.
+
+------------------------------------------------------------
+
+Why Drift Radar Exists
+---------------------
+Most software tooling focuses on local properties:
+- syntax
+- style
+- correctness
+- test coverage
+- performance
+
+Drift Radar focuses on *system-level evolution*.
+
+It exists to help humans perceive:
+- slow structural degradation
+- implicit architectural shifts
+- accumulation of invisible risk
+- long-term imbalance in complex systems
+
+Drift Radar is concerned with evolution, not evaluation.
+
+------------------------------------------------------------
+
+Configuration Philosophy
+------------------------
+Drift Radar is intentionally configuration-light.
+
+Structural drift is highly context-dependent, and excessive
+configuration tends to obscure rather than clarify signals.
+
+Defaults are designed to remain:
+- stable
+- interpretable
+- comparable over time
+
+Over-exposing internal dimensions or tunable parameters would
+encourage metric-driven behavior and reduce the validity of the signal.
+
+Advanced configuration, when available, is optional and minimal.
+
+------------------------------------------------------------
+
+Intended Audience
+-----------------
+Drift Radar is intended for:
+- engineers maintaining long-lived systems
+- research and exploratory R&D teams
+- infrastructure and tooling maintainers
+- teams studying software evolution over time
+- projects without a single architectural owner
+
+It is not intended for:
+- strict compliance enforcement
+- automated decision pipelines
+- performance scoring
+- managerial evaluation
+
+------------------------------------------------------------
+
+Design Positioning
+------------------
+Drift Radar is deliberately not based on pattern learning,
+heuristics trained on external datasets, or predictive models.
+
+It does not attempt to infer intent, correctness, or future outcomes.
+
+Instead, it operates as a structural observation instrument,
+designed to remain stable, interpretable, and resistant to drift
+in its own behavior as repositories evolve.
+
+------------------------------------------------------------
+
+License and Usage
+-----------------
+Drift Radar is provided for research, educational, and
+non-commercial use.
+
+License: CC BY-NC
+
+Commercial usage is intentionally restricted in order to preserve
+research integrity and avoid misuse in automated decision pipelines.
+Commercial use requires explicit permission.
+
+------------------------------------------------------------
+
+Positioning
+-----------
+Drift Radar is developed by :contentReference[oaicite:0]{index=0}
+as part of a broader research effort on drift, stability, and
+long-term behavior in complex systems.
+
+------------------------------------------------------------
+
+Guiding Principle
+-----------------
+"Drift Radar does not tell you what to do.
+It helps you see what is changing."
+
+============================================================
