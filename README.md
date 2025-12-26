@@ -4,7 +4,6 @@
 ![License](https://img.shields.io/github/license/ervratech/drift-radar)
 ![Node](https://img.shields.io/badge/node-20.x-green)
 
-
 # Drift Radar — GitHub Action
 
 **Detect risky changes before they hit production.**
